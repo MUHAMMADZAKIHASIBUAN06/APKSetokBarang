@@ -1,11 +1,304 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>403 Forbidden</title>
-</head>
-<body>
+<html lang="en"><head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="">
+<title>Halaman Dashboard</title>
+<link href="http://localhost/stokbarang/sb-admin/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+<link href="http://localhost/stokbarang/sb-admin/css/sb-admin-2.min.css" rel="stylesheet">
+<link href="http://localhost/stokbarang/sb-admin/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet"></head>
 
-<p>Directory access is forbidden.</p>
+<body id="page-top">
+  <?php
+    include 'index.php';
+    ?>
 
-</body>
-</html>
+<div id="wrapper">
+    <!-- load sidebar -->
+    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php">
+            <div class="sidebar-brand-icon rotate-n-15">
+                <i class="fas fa-car"></i>
+            </div>
+            <div class="sidebar-brand-text mx-3">Stok Gudang<sup></sup></div>
+        </a>
+        <hr class="sidebar-divider my-0">
+        <li class="nav-item active">
+            <a class="nav-link" href="http://localhost/stokbarang/dashboard">
+                <i class="fas fa-fw fa-tachometer-alt"></i>
+                <span>Dashboard</span></a>
+        </li>
+        <hr class="sidebar-divider">
+
+        <div class="sidebar-heading">
+            Telkom
+        </div>
+
+        <li class="nav-item ">
+            <a class="nav-link" href="h">
+                <i class="fas fa-fw fa-box"></i>
+                <span>Stok Barang</span></a>
+        </li>
+
+        <li class="nav-item ">
+            <a class="nav-link" href="http://localhost/stokbarang/customer">
+                <i class="fas fa-fw fa-users"></i>
+                <span>Data Pengambil</span></a>
+        </li>
+
+        <li class="nav-item ">
+            <a class="nav-link" href="http://localhost/stokbarang/supplier">
+                <i class="fas fa-fw fa-user"></i>
+                <span>Data Sumber Barang</span></a>
+        </li>
+
+        <li class="nav-item ">
+            <a class="nav-link" href="http://localhost/stokbarang/petugas">
+                <i class="fas fa-fw fa-users"></i>
+                <span>Data User</span></a>
+        </li>
+
+        <!-- Divider -->
+        <hr class="sidebar-divider">
+
+        <div class="sidebar-heading">
+            Transaksi
+        </div>
+
+        <li class="nav-item ">
+            <a class="nav-link" href="http://localhost/stokbarang/penerimaan">
+                <i class="fas fa-fw fa-arrow-up"></i>
+                <span>Barang Masuk</span></a>
+        </li>
+
+        <li class="nav-item ">
+            <a class="nav-link" href="http://localhost/stokbarang/pengeluaran">
+                <i class="fas fa-fw fa-arrow-down"></i>
+                <span>Barang Keluar</span></a>
+        </li>
+
+        <hr class="sidebar-divider">
+                        <!-- Heading -->
+            <div class="sidebar-heading">
+                Pengaturan
+            </div>
+
+            <li class="nav-item ">
+                <a class="nav-link" href="http://localhost/stokbarang/pengguna">
+                    <i class="fas fa-fw fa-users"></i>
+                    <span>Manajemen Pengguna</span></a>
+            </li>
+
+            <li class="nav-item ">
+                <a class="nav-link" href="http://localhost/stokbarang/toko">
+                    <i class="fas fa-fw fa-building"></i>
+                    <span>Profil SIM</span></a>
+            </li>
+            
+            <li class="nav-item">
+                <a class="nav-link" href="http://localhost/stokbarang/logout">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Logout</span></a>
+            </li>
+
+            <!-- Divider -->
+                    <hr class="sidebar-divider d-none d-md-block">
+
+        <!-- Sidebar Toggler (Sidebar) -->
+        <div class="text-center d-none d-md-inline">
+            <button class="rounded-circle border-0" id="sidebarToggle"></button>
+        </div>
+    </ul>
+    <div id="content-wrapper" class="d-flex flex-column">
+        <div id="content" data-url="http://localhost/stokbarang/kasir">
+            <!-- load Topbar -->
+            <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+                <!-- Sidebar Toggle (Topbar) -->
+                <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <font color="red" face="arial bold">20-Apr-2025 23:55:04 WIB</font>          <div class="topbar-divider d-none d-sm-block"></div>
+      <marquee><font size="4" face="Copperplate Gothic Bold">Sistem Informasi Stok Barang Gudang <b><i>Perlengkapan dan Inventarisasi Aset</i></b></font></marquee>
+                <!-- Topbar Navbar -->
+                <ul class="navbar-nav ml-auto">
+                    <!-- Nav Item - Search Dropdown (Visible Only XS) -->
+                    <li class="nav-item dropdown no-arrow d-sm-none">
+                        <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <!-- Dropdown - Messages -->
+                        <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in" aria-labelledby="searchDropdown">
+                            <form class="form-inline mr-auto w-100 navbar-search">
+                                <div class="input-group">
+                                    <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+                                    <div class="input-group-append">
+                                        <button class="btn btn-primary" type="button">
+                                            <i class="fas fa-search fa-sm"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </li>
+
+                    <div class="topbar-divider d-none d-sm-block"></div>
+                    <!-- Nav Item - User Information -->
+                    <li class="nav-item dropdown no-arrow">
+                        <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span class="mr-2 d-none d-lg-inline text-gray-600 small">Chamidah</span>
+                        </a>
+                        <!-- Dropdown - User Information -->
+                        <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+                            <a class="dropdown-item" href="http://localhost/stokbarang/logout">
+                                <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                Logout
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+            <div class="container-fluid">
+                <div class="clearfix">
+                    <div class="float-left">
+                        <h1 class="h3 m-0 text-gray-800">Halaman Dashboard</h1>
+                    </div>
+                </div>
+                <hr>
+                                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        Data Customer <strong>Berhasil</strong> Dihapus!							<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                                    
+                <div class="row">
+
+                    <!-- Earnings (Monthly) Card Example -->
+                    <div class="col-xl-3 col-md-6 mb-4">
+                      <div class="card border-left-primary shadow h-100 py-2">
+                        <div class="card-body">
+                          <div class="row no-gutters align-items-center">
+                            <div class="col mr-2">
+                              <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Jumlah Barang</div>
+                              <div class="h5 mb-0 font-weight-bold text-gray-800">64</div>
+                            </div>
+                            <div class="col-auto">
+                              <i class="fas fa-box fa-2x text-gray-300"></i>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Earnings (Monthly) Card Example -->
+                    <div class="col-xl-3 col-md-6 mb-4">
+                      <div class="card border-left-success shadow h-100 py-2">
+                        <div class="card-body">
+                          <div class="row no-gutters align-items-center">
+                            <div class="col mr-2">
+                              <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Jumlah User</div>
+                              <div class="h5 mb-0 font-weight-bold text-gray-800">3</div>
+                            </div>
+                            <div class="col-auto">
+                              <i class="fas fa-users fa-2x text-gray-300"></i>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Earnings (Monthly) Card Example -->
+                    <div class="col-xl-3 col-md-6 mb-4">
+                      <div class="card border-left-info shadow h-100 py-2">
+                        <div class="card-body">
+                          <div class="row no-gutters align-items-center">
+                            <div class="col mr-2">
+                              <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Jumlah Pengeluaran</div>
+                              <div class="row no-gutters align-items-center">
+                                <div class="col-auto">
+                                  <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">3</div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-auto">
+                              <i class="fas fa-file-invoice fa-2x text-gray-300"></i>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Pending Requests Card Example -->
+                    <div class="col-xl-3 col-md-6 mb-4">
+                      <div class="card border-left-warning shadow h-100 py-2">
+                        <div class="card-body">
+                          <div class="row no-gutters align-items-center">
+                            <div class="col mr-2">
+                              <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Jumlah Penerimaan</div>
+                              <div class="h5 mb-0 font-weight-bold text-gray-800">1</div>
+                            </div>
+                            <div class="col-auto">
+                              <i class="fas fa-users fa-2x text-gray-300"></i>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                      <div class="col-md-6">
+                        <div class="card shadow">
+                            <div class="card-header"><strong>Profil SIM</strong></div>
+                            <div class="card-body">
+                                <strong>Nama SIM : </strong><br>
+                                <input type="text" value="Stok Barang Perlengkapan dan Aset" readonly="" class="form-control mt-2 mb-2">
+                                <strong>Nama Pemilik : </strong><br>
+                                <input type="text" value="Fakhrul Nugroho" readonly="" class="form-control mt-2 mb-2">
+                                <strong>No Telepon : </strong><br>
+                                <input type="text" value="085000000000" readonly="" class="form-control mt-2 mb-2">
+                                <strong>Alamat : </strong><br>
+                                <input type="text" value="https://github.com/fakhrulnugroho/ci-app-inventori" readonly="" class="form-control mt-2">
+                            </div>				
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="card shadow">
+                            <div class="card-header"><strong>User Sedang Login</strong></div>
+                            <div class="card-body">
+                                <strong>Nama : </strong><br>
+                                <input type="text" value="Chamidah" readonly="" class="form-control mt-2 mb-2">
+                                <strong>Username : </strong><br>
+                                <input type="text" value="admin" readonly="" class="form-control mt-2 mb-2">
+                                <strong>Role : </strong><br>
+                                <input type="text" value="admin" readonly="" class="form-control mt-2 mb-2">
+                                <strong>Jam Login : </strong><br>
+                                <input type="text" value="23:45:18" readonly="" class="form-control mt-2">
+                            </div>				
+                        </div>
+                      </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- load footer -->
+        <footer class="sticky-footer bg-white">
+<div class="container my-auto">
+    <div class="copyright text-center my-auto">
+     <!----  <span>Repost by © 2025 by <a href="" target="_blank">Stok Gudang</a></span>   --->
+    </div>
+</div>
+</footer>		</div>
+</div>
+<script src="http://localhost/stokbarang/sb-admin/vendor/jquery/jquery.min.js"></script>
+<script src="http://localhost/stokbarang/sb-admin/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="http://localhost/stokbarang/sb-admin/vendor/jquery-easing/jquery.easing.min.js"></script>
+<script src="http://localhost/stokbarang/sb-admin/js/sb-admin-2.min.js"></script>	<script src="http://localhost/stokbarang/sb-admin/js/demo/datatables-demo.js"></script>
+<script src="http://localhost/stokbarang/sb-admin/vendor/datatables/jquery.dataTables.min.js"></script>
+<script src="http://localhost/stokbarang/sb-admin/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+</body></html>
+
+
